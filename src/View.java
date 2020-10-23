@@ -26,8 +26,29 @@ public class View extends JFrame implements ActionListener {
     private JButton mRestartAPI;
     private JButton mRemoveSite;
     private JButton mGenerateScript;
-    private JTextArea mScriptOutput;
     private JButton mExit;
+
+    private JTextArea mScriptOutput;
+
+    private JLabel mNameSpace;
+    private JLabel mDNS;
+    private JLabel mAPIBuild;
+    private JLabel mBookingBuild;
+    private JLabel mOptionsBuild;
+    private JLabel mDBIP;
+    private JLabel mDBUser;
+    private JLabel mDBPassword;
+    private JLabel mDBName;
+
+    private JTextField mNameSpaceText;
+    private JTextField mDNSText;
+    private JTextField mAPIBuildText;
+    private JTextField mBookingBuildText;
+    private JTextField mOptionsBuildText;
+    private JTextField mDBIPText;
+    private JTextField mDBUserText;
+    private JTextField mDBPasswordText;
+    private JTextField mDBNameText;
 
     public View(App pApp){
         mApp = pApp;
@@ -50,6 +71,7 @@ public class View extends JFrame implements ActionListener {
         mUpdateConnectionString = new JButton("Update Connection String");
         mUpdateConnectionString.setFont(new Font("Arial", Font.BOLD, 12));
         mRestartAPI = new JButton("Restart APIs");
+        mRestartAPI.addActionListener(this);
         mRestartAPI.setFont(new Font("Arial", Font.BOLD, 12));
         mRemoveSite = new JButton("Remove Site");
         mRemoveSite.setFont(new Font("Arial", Font.BOLD, 12));
@@ -145,6 +167,9 @@ public class View extends JFrame implements ActionListener {
         switch (event.getActionCommand()){
             case "Exit":
                 mApp.exit();
+            case "Restart APIs":
+                mNewDeployment.setVisible(false);
+                break;
         }
     }
 }
