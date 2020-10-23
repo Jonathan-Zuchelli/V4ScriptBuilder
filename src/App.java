@@ -8,7 +8,7 @@ public class App {
         new App().Run();
     }
     public void Run(){
-        JFrame.setDefaultLookAndFeelDecorated(false);
+        JFrame.setDefaultLookAndFeelDecorated(true);
         setView(new View(this));
     }
     public void exit(){
